@@ -11,3 +11,46 @@ $primary-color_footer: #2e97db;
 @mixin mt($time){
   transition: all $time ease;
 }
+
+@mixin animation ($name, $duration, $delay, $ease) {
+  -webkit-animation: $name $duration $delay $ease;
+  -moz-animation:    $name $duration $delay $ease;
+  -ms-animation:     $name $duration $delay $ease;
+}
+
+@mixin rotate ($deg) {
+  -webkit-transform: rotate($deg);
+  -moz-transform: 	 rotate($deg);
+  -ms-transform: 		 rotate($deg);
+  -o-transform: 		 rotate($deg);
+}
+@mixin transition-delay($duration){
+  -webkit-transition-delay: $duration;
+  -moz-transition-delay: $duration;
+  -o-transition-delay: $duration;
+  -ms-transition-delay: $duration;
+  transition-delay: $duration;
+}
+
+@mixin transition-delay2($duration, $duration2){
+  -webkit-transition-delay: $duration, $duration2;
+  -moz-transition-delay: $duration, $duration2;
+  -o-transition-delay: $duration, $duration2;
+  -ms-transition-delay: $duration, $duration2;
+  transition-delay: $duration, $duration2;
+}
+
+@mixin border-radius($topright, $bottomright, $bottomleft, $topleft) {
+  -webkit-border-top-right-radius: $topright;
+  -webkit-border-bottom-right-radius: $bottomright;
+  -webkit-border-bottom-left-radius: $bottomleft;
+  -webkit-border-top-left-radius: $topleft;
+  -moz-border-radius-topright: $topright;
+  -moz-border-radius-bottomright: $bottomright;
+  -moz-border-radius-bottomleft: $bottomleft;
+  -moz-border-radius-topleft: $topleft;
+  border-top-right-radius: $topright;
+  border-bottom-right-radius: $bottomright;
+  border-bottom-left-radius: $bottomleft;
+  border-top-left-radius: $topleft;
+}
