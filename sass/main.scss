@@ -1,8 +1,7 @@
 @import "bourbon";
 @import "vars.scss";
 
-//Load Libs SASS
-@import "app/libs/animate/animate.scss";
+
 
 *::-webkit-input-placeholder {
 	color: #666666;
@@ -38,3 +37,9 @@ body textarea:required:valid {
 
 //ALWAYS END
 @import "media";
+
+//Load Libs SASS
+@import "app/libs/animate/animate.scss";
+//Load Libs SASS
+@import "app/libs/font-awesome/css/font-awesome.scss";
+

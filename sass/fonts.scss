@@ -1,4 +1,11 @@
 @import "bourbon";
 
-@include font-face("RobotoRegular", "../fonts/RobotoRegular/RobotoRegular", $file_formats: eot woff ttf);
+//DinCond
+@include font-face("pf_din_text_cond_probold", "../fonts/Pfdintextcond/pfdintextcondpro-bold", $file_formats: eot woff woff2 ttf svg);
+@include font-face("pf_din_text_cond_prolight", "../fonts/Pfdintextcond/pfdintextcondpro-light", $file_formats: eot woff woff2 ttf svg);
+@include font-face("pf_din_text_cond_proregular", "../fonts/Pfdintextcond/pfdintextcondpro-regular", $file_formats: eot woff woff2 ttf svg);
 
+//DinPro
+@include font-face("pf_dindisplay_probold", "../fonts/Pfdintextcond/pfdintextcondpro-bold", $file_formats: eot woff woff2 ttf svg);
+@include font-face("pf_dindisplay_proregular", "../fonts/Pfdintextcond/pfdintextcondpro-light", $file_formats: eot woff woff2 ttf svg);
+@include font-face("pf_din_text_comp_promedium", "../fonts/Pfdintextcond/pfdintextcondpro-regular", $file_formats: eot woff woff2 ttf svg);

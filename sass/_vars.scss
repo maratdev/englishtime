@@ -1,2 +1,13 @@
 @import "bourbon";
 
+
+//Переменные
+$primary-color_blue_light: #80ceff;
+$primary-color_blue: #1b325f;
+$primary-color_footer: #2e97db;
+@mixin outline($color){
+  outline: 1px solid $color;
+}
+@mixin mt($time){
+  transition: all $time ease;
+}
