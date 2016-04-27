@@ -47,7 +47,6 @@ html{
 //Сили для Header
 header{
 	//background:url("../img/fullscreen-slider.jpg") no-repeat center ;
-	background-size: cover;
 	width: 100%;
 	height: 100%;
 	min-height: 620px;
@@ -100,9 +99,6 @@ header{
 			}
 
 		}
-
-
-
 	}
 	.phone{
 		margin-top:12px ;
@@ -178,7 +174,7 @@ header{
 
 	}
 
-	//Бургер меню
+//Бургер меню----------------------------
 
 	.toggle-mnu {
 		display: block;
@@ -202,7 +198,7 @@ header{
 	.toggle-mnu span, .toggle-mnu span:after, .toggle-mnu span:before {
 		width: 100%;
 		height: 2px;
-		background-color: #fff;
+		background-color: #000;
 		transition: all 0.3s;
 		backface-visibility: hidden;
 		border-radius: 2px;
@@ -216,15 +212,116 @@ header{
 	.toggle-mnu.on span:after {
 		transform: rotate(-45deg) translate(6px, -7px);
 	}
+	.toggle-mnu{
+		position: absolute;
+		top: 0;
+		right: 15px
+	}
+
+//-----------------------------------------------------------
 
 //Скроль мыши иконка
 	.mw-wrapper{
 		text-align: center;
 		padding-bottom: 20px;
 
+
+ // Mouse animate icon
+
+		.mouse-icon {
+			display: inline-block;
+			border: 2px solid  #fff;
+			border-radius: 16px;
+			height: 40px;
+			width: 24px;
+			z-index: 10;
+			opacity: 0.7;
+		}
+		.mouse-icon .wheel {
+			animation-name: drop;
+			animation-duration: 1s;
+			animation-timing-function: linear;
+			animation-delay: 0s;
+			animation-iteration-count: infinite;
+			animation-play-state: running;
+		}
+		.mouse-icon .wheel {
+			position: relative;
+			border-radius: 10px;
+			background: #fff;
+			width: 2px;
+			height: 6px;
+			top: 4px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		@-webkit-keyframes drop {
+			0% {
+				top: 5px;
+				opacity: 0;
+			}
+			30% {
+				top: 10px;
+				opacity: 1;
+			}
+			100% {
+				top: 25px;
+				opacity: 0;
+			}
+		}
+		@keyframes drop {
+			0% {
+				top: 5px;
+				opacity: 0;
+			}
+			30% {
+				top: 10px;
+				opacity: 1;
+			}
+			100% {
+				top: 25px;
+				opacity: 0;
+			}
+		}
+
+	}
+
+	.hidden-mnu {
+		background-color: $primary-color_blue_light;
+		display: none;
+		position: relative;
+		top: 20px;
+		li {
+			display: block !important;
+		}
+		> ul {
+			padding: 15px 0;
+			> li {
+				&.active {
+					a {
+						color: #fff;
+						width: 100% !important;
+					}
+				}
+				> a {
+					text-transform: uppercase;
+					text-decoration: none;
+					margin: 10px 0 !important;
+					&:hover {
+						color: white;
+						background-color: #fff;
+						text-decoration: none;
+						border-radius: 13px;
+
+					}
+				}
+			}
+		}
 	}
 
 }
+
+
 
 
 

@@ -1,5 +1,13 @@
 $(function() {
 
+	//Mobile Menu Toggle Button
+	$(".toggle-mnu").click(function() {
+		$(this).toggleClass("on");
+		$(".main-mnu").slideToggle();
+		return false;
+	});
+
+
 	//Header во весь экран
 	function heightDetect(){
 		$("header").css("height", $(window).height());
