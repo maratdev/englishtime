@@ -57,19 +57,39 @@ body textarea:required:valid {
 			margin: 0;
 			.item-box{
 				border: 0.063em solid #d8d7d7;
-				height: 192px;
+				min-height:210px;
 					img{
 						float: left;
-						margin-top: 36px;
-						margin-left: 27px;
+						margin-top: 25px;
+						margin-left:8px;
 					}
 				h3{
-					margin-top: 36px;
-					margin-left: 26px;
+					margin-top: 18px;
+					margin-left: 71px;
+					margin-bottom: 0;
 					color: #1b325f;
 					text-transform: uppercase;
 					font-size: 1.125em;
 					font-family:'pf_din_text_comp_promedium';
+					span{
+						display:block;
+						padding-top: -55px;
+						font-size: em(10px);
+
+					}
+				}
+				p{
+					font-size: em(12px);
+					margin-left: 71px;
+					line-height: normal;
+					margin-bottom: 16px;
+				}
+				a{
+					color: $primary-color_blue;
+					text-decoration: none;
+					background-color: $primary-color_blue_light;
+					padding: 3px 35px;
+					margin-left: 71px;
 				}
 			}
 		}
@@ -77,6 +97,16 @@ body textarea:required:valid {
 	}
 }
 
+//Блок "Причины выучить английский язык"
+
+.reasons{
+	min-height:61.5em ;
+	background:#f2f2f2 url("../img/service_bg.jpg") no-repeat center;
+	background-size:cover;
+	width: 100%;
+	height: auto;
+
+}
 
 //ALWAYS END
 @import "media";
