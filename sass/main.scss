@@ -35,14 +35,15 @@ body textarea:required:valid {
 
 //Custom Styles Here
 .service{
-	min-height:61.5em ;
 	background:#f2f2f2 url("../img/service_bg.jpg") no-repeat center;
 	background-size:cover;
 	width: 100%;
 	height: auto;
+	margin-bottom: 120px;
 
 	h2{
 		padding: 0;
+
 	}
 
 	.service-wrapper{
@@ -70,6 +71,7 @@ body textarea:required:valid {
 					color: #1b325f;
 					text-transform: uppercase;
 					font-size: 1.125em;
+
 					font-family:'pf_din_text_comp_promedium';
 					span{
 						display:block;
@@ -101,10 +103,53 @@ body textarea:required:valid {
 
 .reasons{
 	min-height:61.5em ;
-	background:#f2f2f2 url("../img/service_bg.jpg") no-repeat center;
+	background:#f2f2f2 url("../img/newsletter-parallax.png") no-repeat center;
 	background-size:cover;
 	width: 100%;
 	height: auto;
+
+		h2{
+			margin-bottom: 128px;
+		}
+		.reasons-wrapper{
+
+		}
+
+		.item{
+			padding: 0;
+			margin: 0;
+			.item-box{
+				margin-bottom: 25px;
+				height: auto;
+				img{
+					float: left;
+					margin-top: 25px;
+				}
+				i{
+					float: left;
+					margin-top: 25px;
+					font-size: em(58px);
+					color: $primary-color_blue;
+					text-align: left;
+				}
+				h3{
+					margin-top: 27px;
+					margin-left: 82px;
+					line-height: normal;
+					color: $primary-color_blue;
+					text-transform: uppercase;
+					font-size: 1.125em;
+					font-family:'pf_din_text_comp_promedium';
+				}
+				p{
+					font-size: em(15px);
+					margin-left: 82px;
+					line-height: normal;
+					color: #333;
+				}
+
+			}
+		}
 
 }
 

@@ -75,13 +75,21 @@
 				}
 			}
 		}
+
 	}
 
 
 }
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
-
+	.service{
+		h2{
+			font-size:em(36px);
+		}
+		.item-box{
+			min-height:250px !important;
+		}
+	}
 
 }
 
