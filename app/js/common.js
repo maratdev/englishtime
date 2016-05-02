@@ -1,5 +1,8 @@
 $(function() {
 
+	//Валидатор формы
+	$('#myForm').validator();
+
 	//Mobile Menu Toggle Button
 	$(".toggle-mnu").click(function() {
 		$(this).toggleClass("on");

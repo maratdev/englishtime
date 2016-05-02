@@ -4,22 +4,22 @@
 
 
 *::-webkit-input-placeholder {
-	color: #666666;
+	color: #b8b8b8;
 	opacity: 1;
 }
 
 *:-moz-placeholder {
-	color: #666666;
+	color: #b8b8b8;
 	opacity: 1;
 }
 
 *::-moz-placeholder {
-	color: #666666;
+	color: #b8b8b8;
 	opacity: 1;
 }
 
 *:-ms-input-placeholder {
-	color: #666666;
+	color: #b8b8b8;
 	opacity: 1;
 }
 
@@ -108,11 +108,13 @@ body textarea:required:valid {
 	width: 100%;
 	height: auto;
 
-		h2{
-			margin-bottom: 128px;
-		}
-		.reasons-wrapper{
+	img{
+		max-width: 100%;
+		display: block;
+	}
 
+		h2{
+			margin-bottom:90px;
 		}
 
 		.item{
@@ -151,6 +153,175 @@ body textarea:required:valid {
 			}
 		}
 
+}
+
+//Раздел work
+
+.work{
+	margin-top: -70px;
+	padding-top:40px;
+	height: auto;
+	background:url("../img/work_bg.jpg") repeat;
+	transform: skewY(4deg);
+	padding-bottom:80px;
+		.container{
+			transform: skewY(-4deg);
+
+			h2{
+
+				color: #fff;
+			}
+			.item{
+				padding: 0;
+				margin: 0;
+				.item-box{
+					padding: 0;
+					margin-bottom: 25px;
+					height: auto;
+
+					img{
+						margin-top:10px;
+					}
+					.sprite{
+						img{
+							display: block;
+							margin-top:12.5%;
+							margin-left:12.5%;
+							margin-bottom:8%;
+						}
+					}
+
+					p{
+						font-family:'pfdintextcomppro';
+						font-size: em(18px);
+						line-height: normal;
+						text-transform: uppercase;
+						color: $primary-color_blue;
+						margin: 0;
+					}
+
+					&:nth-child(1){
+						background:#2e97db url("../img/work/1.png") no-repeat 111px 0;
+					}
+					&:nth-child(2){
+						background:#2e97db url("../img/work/2.png") no-repeat 111px 0;
+					}
+					&:nth-child(3){
+						background:#2e97db url("../img/work/3.png") no-repeat 111px 0;
+					}
+
+
+				}
+
+
+			}
+
+		}
+
+}
+.email{
+height: auto;
+	padding-bottom: 50px;
+	h4{
+		margin-top: 120px;
+		text-transform: uppercase;
+		color: $primary-color_blue-light;
+		font-weight:normal;
+		font-size:em(22px);
+	}
+	form{
+		.form-group{
+			float: left;
+		}
+		input{
+			min-width:19.5em ;
+			height: 3.25em;
+			border: 0.063em solid #80ceff;
+			border-radius: 10px;
+			padding-left:40px;
+			text-transform: uppercase;
+			margin-right:23px;
+
+
+		}
+		button[type="submit"] {
+			border: none;
+			width: 14.438em;
+			height: 3.25em;
+			background-color: #1b325f;
+			border-radius: 10px;
+			padding-left: 0;
+			color: $primary-color_blue_light;
+			font-family:'pf_dindisplay_proregular', sans-serif;
+		}
+	}
+}
+.results{
+	background:url("../img/parallax-light.jpg") no-repeat center;
+	background-size: cover;
+	width: 100%;
+	height:49.563em ;
+	position: relative;
+	img{
+		max-width: 100%;
+		display: block;
+	}
+	.circle{
+		display: table;
+		background:#80ceff url("../img/circle.jpg") no-repeat center;
+		width: 23.063em;
+		height: 23.063em;
+		border-radius: 50%;
+		background-size: cover;
+		//Вертикальное выпавнивание
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		h2{
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;
+			color: #fff;
+			font-family:'pfdintextcomppro', sans-serif;
+			font-size:em(33px);
+		}
+		.item{
+			.item-circle{
+				display: table;
+				position: absolute;
+				margin: auto;
+				width: 7.063em;
+				height: 7.063em;
+				background-color: #80ceff;
+				border: 0.437em solid #b1e1ff;
+				border-radius: 50%;
+				i{
+					color: #1b325f;
+					font-size: 3em;
+					display: table-cell;
+					vertical-align: middle;
+					text-align: center;
+				}
+				&:nth-child(1){
+					right: 237px !important;
+					top:- 12px;
+				}
+				&:nth-child(2){
+					right:310px !important;
+					top:130px;
+				}
+				&:nth-child(3){
+					right:237px !important;
+					top:280px;
+				}
+			}
+
+		}
+
+	}
 }
 
 //ALWAYS END
