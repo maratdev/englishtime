@@ -1,5 +1,7 @@
 $(function() {
 
+
+
 	//Валидатор формы
 	$('#myForm').validator();
 
@@ -82,6 +84,25 @@ $(function() {
 
 	$("img, a").on("dragstart", function(event) { event.preventDefault(); });
 
+	$(document).ready( function() {
+		//enabling stickUp on the '.navbar-wrapper' class
+		$('.top_line').stickUp({
+			parts: {
+				0:'home',
+				1:'service',
+				2: 'reasons',
+				3: 'work',
+				4: 'results',
+				5: 'reviews',
+				6: 'contacts'
+			},
+			itemClass: 'menuItem',
+			itemHover: 'active'
+		});
+
+
+	});
+
 });
 $(window).load(function() {
 	$(".loader_inner").fadeOut();
@@ -89,8 +110,14 @@ $(window).load(function() {
 });
 var card = $(".card");
 
-$(document).on("mousemove",function(e) {
+$(window).on("mousemove",function(e) {
 	var ax = -($(window).innerWidth()/2- e.pageX)/100;
 	var ay = ($(window).innerHeight()/2- e.pageY)/100;
 	card.attr("style", "transform: rotateY("+ax+"deg) rotateX("+ay+"deg);-webkit-transform: rotateY("+ax+"deg) rotateX("+ay+"deg);-moz-transform: rotateY("+ax+"deg) rotateX("+ay+"deg)");
 });
+
+
+
+
+
+

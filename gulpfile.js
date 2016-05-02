@@ -37,6 +37,7 @@ gulp.task('scripts', function() {
 		'./app/libs/bootstrap-validator/validator.min.js',
 		'./app/libs/paralax/parallax.min.js',
 		'./app/libs/plugins-scroll/plugins-scroll.js',
+		'./app/libs/stickup/stickUp.min.js',
 		])
 		.pipe(concat('libs.js'))
 		// .pipe(uglify()) //Minify libs.js

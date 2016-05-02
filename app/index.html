@@ -46,47 +46,47 @@
 <!--<div class="loader">-->
 	<!--<div class="loader_inner"></div>-->
 <!--</div>-->
-	<header data-parallax="scroll" data-position="top center" data-speed="0.5" data-image-src="img/fullscreen-slider.jpg">
+	<header id="home" data-parallax="scroll" data-position="top center" data-speed="0.5" data-image-src="img/fullscreen-slider.jpg">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="top_line clearfix">
 					<div class="container">
 						<div class="row">
-							<div class="col-lg-2 col-lg-4 col-md-6 col-sm-6 col-xs-3 ">
+							<div class="col-lg-2 col-md-6 col-sm-6 col-xs-3 ">
 								<a href="#" class="logo">
 									<img src="img/EnglishTime.svg" onerror="this.onerror=null; this.src='img/logo.jpg'" alt="">
 								</a>
 							</div>
-							<div class="col-lg-3 col-lg-push-7 col-md-6 col-sm-6 col-xs-9">
+							<div class="col-lg-2 col-lg-push-7 col-md-6 col-sm-6 col-xs-9">
 								<div class="phone">
 									<div class="phone-wrap"><i class="fa fa-mobile" aria-hidden="true"></i>+7 989 875 26 26</div>
 									<a href="#" class="callback">Заказать обратный звонок</a>
 								</div>
 								<a href="#" class="toggle-mnu hidden-lg"><span></span></a>
 							</div>
-
-
-							<div class="col-sm-7 col-md-pull-3">
+							<div class="nav-container col-lg-8 col-sm-7 col-md-pull-3">
 								<nav class="main-mnu hidden-md hidden-sm hidden-xs">
 									<ul>
-										<li class="active"><a href="#">Главная</a></li>
-										<li><a href="#">О нас</a></li>
-										<li><a href="#">Курсы</a></li>
-										<li><a href="#">Цена</a></li>
-										<li><a href="#">Отзывы</a></li>
-										<li><a href="#">Контакты</a></li>
+										<li class="menuItem active"><a href="#home">Главная</a></li>
+										<li class="menuItem"><a href="#service">Курсы</a></li>
+										<li class="menuItem"><a href="#reasons">Причины выучить</a></li>
+										<li class="menuItem"><a href="#work">Как работаем</a></li>
+										<li class="menuItem"><a href="#results">Результаты</a></li>
+										<li class="menuItem"><a href="#reviews">Отзывы</a></li>
+										<li class="menuItem"><a href="#contacts">Контакты</a></li>
 									</ul>
 								</nav>
 							</div>
 							<div class="col-xs-12">
-								<nav class="main-mnu hidden-mnu hidden-lg clearfix">
+								<nav class=" main-mnu hidden-mnu hidden-lg clearfix">
 									<ul>
-										<li class="active"><a href="#">Главная</a></li>
-										<li><a href="#">О нас</a></li>
-										<li><a href="#">Курсы</a></li>
-										<li><a href="#">Цена</a></li>
-										<li><a href="#">Отзывы</a></li>
-										<li><a href="#">Контакты</a></li>
+										<li class=" active"><a href="#home">Главная</a></li>
+										<li class=""><a href="#service">Курсы</a></li>
+										<li class=""><a href="#reasons">Причины выучить</a></li>
+										<li class=""><a href="#work">Как работаем</a></li>
+										<li class=""><a href="#results">Результаты</a></li>
+										<li class=""><a href="#reviews">Отзывы</a></li>
+										<li class=""><a href="#contacts">Контакты</a></li>
 									</ul>
 								</nav>
 							</div>
@@ -99,7 +99,7 @@
 		<div class="top_wrapper">
 			<div class="top_description">
 				<div class="top_centered ">
-					<div class="top_text  card ">
+					<div class="top_text card ">
 						<div class="card-content">
 							<h1>English Time</h1>
 							<p class="related">Студия обучения английского языка</p>
@@ -117,7 +117,7 @@
 		</div>
 
 	</header>
-<section class="service">
+<section id="service" class="service">
 	<div class="container">
 		<div class="row">
 			<h2>Какие варианты обучения <br> мы предлагаем?</h2>
@@ -185,7 +185,7 @@
 	</div>
 
 </section>
-<section class="reasons">
+<section id="reasons" class="reasons">
 	<img src="img/1.svg"   onerror="this.onerror=null; this.src='img/1.png'" alt="">
 	<div class="container">
 		<div class="row">
@@ -254,7 +254,7 @@
 		</div>
 	</div>
 </section>
-<section class="work">
+<section id="work" class="work">
 	<div class="container">
 		<div class="row">
 			<h2>Как мы работаем</h2>
@@ -314,29 +314,27 @@
 		</div>
 	</div>
 </section>
-<section class="email">
+<section id="email" class="email">
 	<div class="container">
 		<div class="row">
-			<h4>запишитесь  на программу <b>сегодня</b>. <br>
+			<h4 class="col-lg-12">запишитесь  на программу <b>сегодня</b>. <br>
 				и мы определим уровень ваших знаний <b>бесплатно!</b></h4>
-
-			<form data-toggle="validator" role="form">
-				<div class="form-group">
+			<form class="clearfix" data-toggle="validator" role="form">
+				<div class="form-group col-md-4">
 					<input type="email" class="form-control" id="inputName" placeholder="Email" required>
 				</div>
-
-				<div class="form-group">
+				<div class="form-group col-md-4">
 					<input type="tel" data-minlength="11" class="form-control" id="inputPassword" placeholder="8(123)-456-78-90" required>
 
 				</div>
-		<div class="form-group">
-			<button type="submit" class="btn btn-primary">Отправить</button>
-		</div>
+				<div class="form-group col-md-4">
+					<input type="submit" data-minlength="11" class="form-control" id="inputPassword" placeholder="8(123)-456-78-90" required>
+				</div>
 		</form>
 		</div>
 	</div>
 </section>
-<section class="results" data-parallax="scroll" data-speed="0.5" data-position="top center"  data-image-src="img/parallax-light.jpg">
+<section id="results" class="results hidden-xs" data-parallax="scroll" data-speed="0.5" data-position="top center"  data-image-src="img/parallax-light.jpg">
 	<img src="img/1.svg"   onerror="this.onerror=null; this.src='img/1.png'" alt="">
 	<div class="container-fluid">
 		<div class="row">
@@ -381,7 +379,9 @@
 		</div>
 	</div>
 </section>
-	<div class="hidden">
+<section id="reviews" class="reviews"></section>
+<section id="contacts" class="contacts"></section>
+<div class="hidden">
 
 	</div>
 
