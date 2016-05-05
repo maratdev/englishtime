@@ -1,8 +1,6 @@
 @import "bourbon";
 @import "vars.scss";
 
-
-
 *::-webkit-input-placeholder {
 	color: #b8b8b8;
 	opacity: 1;
@@ -71,7 +69,6 @@ body textarea:required:valid {
 					color: #1b325f;
 					text-transform: uppercase;
 					font-size: 1.125em;
-
 					font-family:'pf_din_text_comp_promedium';
 					span{
 						display:block;
@@ -186,6 +183,7 @@ body textarea:required:valid {
 //Блок "Причины выучить английский язык"
 
 .reasons{
+	overflow: hidden;
 	min-height:61.5em ;
 	background:#f2f2f2 url("../img/newsletter-parallax.png") no-repeat center;
 	background-size:cover;
@@ -207,9 +205,23 @@ body textarea:required:valid {
 			.item-box{
 				margin-bottom: 25px;
 				height: auto;
-				img{
+				animation-delay:.10s ;
+				opacity: 0;
+				transition: all .5s ease;
+				transform: translateY(-25px);
+				&.on{
+					opacity: 1;
+					transform: translateY(0);
+				}
+				&:hover{
+					transform: translateY(-10px)
+				}
+
+				svg{
 					float: left;
 					margin-top: 25px;
+					fill:$primary-color_blue;
+
 				}
 				i{
 					float: left;
@@ -217,6 +229,7 @@ body textarea:required:valid {
 					font-size: em(58px);
 					color: $primary-color_blue;
 					text-align: left;
+
 				}
 				h3{
 					margin-top: 27px;
@@ -236,6 +249,17 @@ body textarea:required:valid {
 
 			}
 		}
+
+	.item-box:hover  i {
+		@include mt(0.8s) ;
+		color: $primary-color_footer;
+
+	}
+	.item-box:hover  svg {
+		@include mt(0.8s) ;
+		fill: $primary-color_footer;
+
+	}
 
 }
 
@@ -304,6 +328,7 @@ body textarea:required:valid {
 
 }
 .email{
+	background-color: #fff;
 height: auto;
 	padding-bottom: 50px;
 	h4{
@@ -316,6 +341,7 @@ height: auto;
 	form{
 		.form-group{
 			float: left;
+			margin-top: 15px;
 
 		}
 		input{
@@ -328,19 +354,72 @@ height: auto;
 
 
 		}
-		input[type="submit"] {
-			border: none;
-			width: 14.438em;
-			height: 3.25em;
-			background-color: #1b325f;
-			border-radius: 10px;
-			padding-left: 0;
-			color: $primary-color_blue_light;
-			font-family:'pf_dindisplay_proregular', sans-serif;
-		}
 
 
 	}
+
+	/* Common button styles */
+	.button {
+		float: left;
+		display: block;
+		border: none;
+		position: relative;
+		z-index: 1;
+		-webkit-backface-visibility: hidden;
+		border-radius: 10px;
+		width: 14.438em;
+		height: 3.25em;
+		font-family:'pf_dindisplay_proregular', sans-serif;
+	}
+	.button:focus {
+		outline: none;
+	}
+
+	/* Isi */
+	.button--isi {
+		background-color: $primary-color_blue;
+		overflow: hidden;
+		color: $primary-color_blue;
+	}
+	.button--isi::before {
+		content: '';
+		z-index: -1;
+		position: absolute;
+		top: 50%;
+		left: 100%;
+		margin: -15px 0 0 1px;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background-color: $primary-color_blue_light;
+		-webkit-transform-origin: 100% 50%;
+		transform-origin: 100% 50%;
+		-webkit-transform: scale3d(1, 2, 1);
+		transform: scale3d(1, 2, 1);
+		-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+		transition: transform 0.3s, opacity 0.3s;
+		-webkit-transition-timing-function: cubic-bezier(0.7,0,0.9,1);
+		transition-timing-function: cubic-bezier(0.7,0,0.9,1);
+
+	}
+	.button--isi:hover > span {
+		color:$primary-color_blue;
+		@include mt(.3s)
+	}
+
+
+	.button--isi > span {
+		vertical-align: middle;
+		color: $primary-color_blue-light;
+
+	}
+	.button--isi:hover::before {
+		-webkit-transform: scale3d(9, 9, 1);
+		transform: scale3d(9, 9, 1);
+
+	}
+
+
 }
 .results{
 	overflow: hidden;
@@ -501,12 +580,12 @@ height: auto;
 		background:#80ceff url("../img/contacts/newsletter-parallax.png") no-repeat center;
 		background-size: cover;
 		height: auto;
-		min-height:727px;
+		min-height:800px;
 		padding-right: 0;
 
 			.contacts-wrapper{
 				margin-top: 203px;
-				margin-left: 143px;
+				margin-left:18%;
 				img{
 					width: 10%;
 					position: static;
@@ -527,7 +606,7 @@ height: auto;
 	.contacts-formal{
 		margin-top: 120px;
 		form{
-			margin-left: 125px;
+			margin-left:18%;
 			.form-group{
 				float: left;
 				margin-top: 15px;
@@ -540,17 +619,11 @@ height: auto;
 				border-radius: 10px;
 				padding-left:40px;
 				text-transform: uppercase;
+				&:focus{
+					outline: none;
+				}
 			}
-			input[type="submit"] {
-				border: none;
-				width: 14.438em;
-				height: 3.25em;
-				background-color: #1b325f;
-				border-radius: 10px;
-				padding-left: 0;
-				color: $primary-color_blue_light;
-				font-family:'pf_dindisplay_proregular', sans-serif;
-			}
+
 			textarea{
 				width: 100%;
 				height:10.25em;
@@ -559,65 +632,220 @@ height: auto;
 				padding-left:40px;
 				padding-top:10px;
 				text-transform: uppercase;
+				&:focus{
+					outline: none;
+				}
 			}
 
 		}
+
+			.button--isi:hover {
+				border:0.5px solid $primary-color_footer;
+			}
+		/* Common button styles */
+		.button {
+			float: left;
+			display: block;
+			border: none;
+			position: relative;
+			z-index: 1;
+			-webkit-backface-visibility: hidden;
+			border-radius: 10px;
+			width: 14.438em;
+			height: 3.25em;
+			font-family:'pf_dindisplay_proregular', sans-serif;
+		}
+		.button:focus {
+			outline: none;
+		}
+
+		/* Isi */
+		.button--isi {
+			background-color: $primary-color_blue;
+			overflow: hidden;
+			color: $primary-color_blue;
+		}
+		.button--isi::before {
+			content: '';
+			z-index: -1;
+			position: absolute;
+			top: 50%;
+			left: 100%;
+			margin: -15px 0 0 1px;
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			background-color: $primary-color_blue_light;
+			-webkit-transform-origin: 100% 50%;
+			transform-origin: 100% 50%;
+			-webkit-transform: scale3d(1, 2, 1);
+			transform: scale3d(1, 2, 1);
+			-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+			transition: transform 0.3s, opacity 0.3s;
+			-webkit-transition-timing-function: cubic-bezier(0.7,0,0.9,1);
+			transition-timing-function: cubic-bezier(0.7,0,0.9,1);
+
+		}
+		.button--isi:hover > span {
+			color:$primary-color_blue;
+			@include mt(.3s)
+		}
+
+
+		.button--isi > span {
+			vertical-align: middle;
+			color: $primary-color_blue-light;
+
+		}
+		.button--isi:hover::before {
+			-webkit-transform: scale3d(9, 9, 1);
+			transform: scale3d(9, 9, 1);
+
+		}
+
 
 	}
 }
 footer{
 	min-height: 270px;
 	background-color: $primary-color_footer;
-	.svg-wrapper,.button-content {
-	margin-top: 50px;
-		.item{
-			position: relative;
-			width: 225px;
-			height: auto;
-			i{
-				position: absolute;
-				top: 28px;
-				left:39px;
-				bottom: 0;
-				right: 0;
-				color:$primary-color_blue;
-				font-size: em(36px);
-			}
+		.button-content{
+			padding-left: 140px;
 
+			}
+		.svg-wrapper,
+		.button-content {
+			margin-top: 50px;
+				.item{
+					position: relative;
+					height: auto;
+						a{
+							float: left;
+								i{
+									position: absolute;
+									top: 28px;
+									left:39px;
+									bottom: 0;
+									right: 0;
+									color:$primary-color_blue;
+									font-size: em(36px);
+								}
+							}
+						h3{
+							color: #fff;
+							margin-left:100px;
+							margin-top:15px;
+							line-height:normal;
+								span{
+									font-size: em(12px);
+								}
+						}
+
+
+
+				}
+
+			}
+	.button-content{
+		.item:nth-child(2){
+			a{
+				i{
+					top: 26px;
+					left:48px;
+					font-size: em(42px);
+
+				}
+
+			}
+		}
+
+	}
+	.svg-wrapper{
+		.item:nth-child(3){
+			a{
+				i{
+					left:39px;
+					font-size: em(42px);
+
+				}
+
+			}
 		}
 
 	}
 
-	.shape {
+		.shape {
 		stroke-dasharray: 140 540;
 		stroke-dashoffset: -474;
 		stroke-width: 8px;
 		fill: transparent;
 		stroke: #fff;
 		transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
-	}
+		}
 
-	.item:hover .shape {
+		.item:hover .shape {
 		stroke-width: 5px;
 		stroke-dashoffset: 0;
 		stroke-dasharray: 760;
 
-	}
-	.item:hover i {
-	@include mt(0.8s);
-	color: #fff;
+		}
+		.item:hover  i {
+		@include mt(0.8s) ;
+		animation: pulse 1100ms;
+		color: #fff !important;
+		transform-origin: 50% 50%;
 
+		}
+
+	//Simple SCSS hover animations using font-awesome icons
+
+	@keyframes pulse {
+		0% {
+			transform: scaleX(1) scaleY(1);
+		}
+		10% {
+			transform: scaleX(0.85) scaleY(0.85);
+		}
+		20% {
+			transform: scaleX(1) scaleY(1);
+		}
+		30% {
+			transform: scaleX(0.85) scaleY(0.85);
+		}
+		40% {
+			transform: scaleX(1) scaleY(1);
+		}
+		50% {
+			transform: scaleX(0.85) scaleY(0.85);
+		}
+		60% {
+			transform: scaleX(1) scaleY(1);
+		}
+		70% {
+			transform: scaleX(0.85) scaleY(0.85);
+		}
+		80% {
+			transform: scaleX(1) scaleY(1);
+		}
+		90% {
+			transform: scaleX(0.85) scaleY(0.85);
+		}
+		100% {
+			transform: scaleX(1) scaleY(1);
+		}
 	}
 
 }
 
 
 
+
 //ALWAYS END
 @import "media";
 
-//Load Libs SASS
-@import "app/libs/animate/animate.scss";
-//Load Libs SASS
+//Load Libs SCSS
+@import "app/libs/animate/animate";
 @import "app/libs/font-awesome/css/font-awesome.scss";
+@import "app/libs/magnific-popup/dist/magnific-popup";
+
 

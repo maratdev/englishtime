@@ -2,6 +2,39 @@ $(function() {
 
 
 
+	$(".scroll").click(function(event){
+//Перехватываем обработку по умолчанию события нажатия мыши
+		event.preventDefault();
+
+//Получаем полный url - например, mysitecom/index.htm#home
+		var full_url = this.href;
+
+//Разделяем url по символу # и получаем имя целевой секции - home в адресе mysitecom/index.htm#home
+		var parts = full_url.split("#");
+		var trgt = parts[1];
+
+//Получаем смещение сверху для целевой секции
+		var target_offset = $("#"+trgt).offset();
+		var target_top = target_offset.top;
+
+//Переходим в целевую секцию установкой позиции прокрутки страницы в позицию целевой секции
+		$('html, body').animate({scrollTop:target_top}, 1500);
+	});
+
+
+	//Анимация при скроле
+	$(".mouse-icon").click(function() {
+		$("html, body").animate({ scrollTop: $(".service").height()+280 }, "slow");
+		return false;
+	});
+
+	$(".top_wrapper").animated("zoomIn");
+	$(".reasons .row h2").animated("fadeInLeft");
+	$(".item").animated("fadeIn");
+	$(".results .item-circle i").animated("rotateIn");
+	$(".results .item-circle p").animated("zoomIn");
+
+
 	//Валидатор формы
 	$('#myForm').validator();
 
@@ -104,10 +137,8 @@ $(function() {
 	});
 
 });
-$(window).load(function() {
-	$(".loader_inner").fadeOut();
-	$(".loader").delay(400).fadeOut("slow");
-});
+
+
 var card = $(".card");
 
 $(window).on("mousemove",function(e) {
@@ -115,7 +146,10 @@ $(window).on("mousemove",function(e) {
 	var ay = ($(window).innerHeight()/2- e.pageY)/100;
 	card.attr("style", "transform: rotateY("+ax+"deg) rotateX("+ay+"deg);-webkit-transform: rotateY("+ax+"deg) rotateX("+ay+"deg);-moz-transform: rotateY("+ax+"deg) rotateX("+ay+"deg)");
 });
-
+$(window).load(function() {
+	$(".loader_inner").fadeOut();
+	$(".loader").delay(100).fadeOut("slow");
+});
 
 
 

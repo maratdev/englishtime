@@ -1,11 +1,54 @@
 @import "bourbon";
 
 /*==========  Desktop First Method  ========== */
+@media only screen and (max-width: 1500px) {
+
+	footer{
+		.button-content{
+			padding-left: 0 !important;
+
+		}
+		.svg-wrapper,
+		.button-content{
+			margin-top: 70px;
+		}
+	}
+
+	.contacts-form{
+		.contacts-wrapper{
+			padding-top:35px;
+			margin-top: 0 !important;
+			margin-left: 0 !important;
+			img{
+				margin-top: 33px !important;
+			}
+		}
+		form{
+			margin-left: 0 !important;
+		}
+
+	}
+}
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width: 1200px) {
 	.phone{
 		padding-right: 50px;
+	}
+	footer{
+		.button-content{
+			padding-left: 0 !important;
+
+		}
+		.svg-wrapper,
+		.button-content{
+			margin-top: 70px;
+		}
+	}
+
+	.map{
+		height:600px;
+		overflow: hidden;
 	}
 
 }
@@ -52,6 +95,8 @@
 		}
 
 	}
+
+
 }
 
 /* Small Devices, Tablets */
@@ -117,7 +162,19 @@
 
 	}
 
+	.map{
+		height:300px;
+		overflow: hidden;
+	}
+	.contacts-form{
+		.contacts-wrapper{
+			img{
+				margin-top: 45px !important;
+			}
+		}
 
+
+	}
 }
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
@@ -152,8 +209,30 @@
 			width: 100%;
 			margin-top: 25px;
 		}
-
+		.button{
+			width: 100% !important;
+		}
 	}
+	.reviews{
+		img{
+			float: none !important;
+			margin: 0 auto !important;
+			display: block;
+
+		}
+		h3{
+			text-align: center;
+		}
+		p{
+			margin: 0 !important;
+		}
+	}
+	.contacts{
+		.button{
+			width: 100% !important;
+		}
+	}
+
 
 }
 

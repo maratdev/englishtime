@@ -63,7 +63,7 @@ header{
 		width: 100%;
 		height: 3.938em;
 		background-color: #fff;
-		z-index: 9999;
+		z-index: 999;
 
 		.logo{
 			display: block;
@@ -133,6 +133,7 @@ header{
 	}
 
 	.top_wrapper{
+		animation-duration: 2s;
 		display: table;
 		width: 100%;
 		height: 100%;
@@ -275,6 +276,7 @@ header{
  // Mouse animate icon
 
 		.mouse-icon {
+			cursor: pointer;
 			display: inline-block;
 			border: 2px solid  #fff;
 			border-radius: 16px;

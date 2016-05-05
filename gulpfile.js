@@ -38,9 +38,10 @@ gulp.task('scripts', function() {
 		'./app/libs/paralax/parallax.min.js',
 		'./app/libs/plugins-scroll/plugins-scroll.js',
 		'./app/libs/stickup/stickUp.min.js',
+		'.app/libs/magnific-popup/dist/jquery.magnific-popup.min.js',
 		])
 		.pipe(concat('libs.js'))
-		// .pipe(uglify()) //Minify libs.js
+		 .pipe(uglify()) //Minify libs.js
 		.pipe(gulp.dest('./app/js/'));
 });
 
