@@ -24,7 +24,7 @@ $(function() {
 
 	//Анимация при скроле
 	$(".mouse-icon").click(function() {
-		$("html, body").animate({ scrollTop: $(".service").height()+280 }, "slow");
+		$("html, body").animate({ scrollTop: $(".service").height()+290 }, "slow");
 		return false;
 	});
 

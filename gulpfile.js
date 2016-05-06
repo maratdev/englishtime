@@ -2,10 +2,15 @@ var gulp         = require('gulp'),
 		sass         = require('gulp-sass'),
 		autoprefixer = require('gulp-autoprefixer'),
 		cleanCSS    = require('gulp-clean-css'),
+		cssnano      = require('gulp-cssnano'), // Подключаем пакет для минификации CSS
 		rename       = require('gulp-rename'),
 		browserSync  = require('browser-sync').create(),
 		concat       = require('gulp-concat'),
-		uglify       = require('gulp-uglify');
+		del          = require('del'), // Подключаем библиотеку для удаления файлов и папок
+		uglify       = require('gulp-uglify'),
+		htmlmin = require('gulp-htmlmin'),
+		pngquant     = require('imagemin-pngquant'), // Подключаем библиотеку для работы с png
+		imagemin     = require('gulp-imagemin'); // Подключаем библиотеку для работы с изображениями
 
 gulp.task('browser-sync', ['styles', 'scripts'], function() {
 		browserSync.init({
@@ -50,6 +55,53 @@ gulp.task('watch', function () {
 	gulp.watch('app/libs/**/*.js', ['scripts']);
 	gulp.watch('app/js/*.js').on("change", browserSync.reload);
 	gulp.watch('app/*.html').on('change', browserSync.reload);
+});
+
+
+
+
+gulp.task('minify', function() {
+	return gulp.src('src/*.html')
+			.pipe(htmlmin({collapseWhitespace: true}))
+			.pipe(gulp.dest('dist'))
+});
+
+gulp.task('clean', function() {
+	return del.sync('dist'); // Удаляем папку dist перед сборкой
+});
+
+gulp.task('img', function() {
+	return gulp.src('app/img/**/*') // Берем все изображения из app
+			.pipe(cache(imagemin({  // Сжимаем их с наилучшими настройками с учетом кеширования
+				interlaced: true,
+				progressive: true,
+				svgoPlugins: [{removeViewBox: false}],
+				use: [pngquant()]
+			})))
+			.pipe(gulp.dest('dist/img')); // Выгружаем на продакшен
+});
+
+
+gulp.task('build', ['clean', 'img', 'sass', 'scripts'], function() {
+
+	var buildCss = gulp.src([ // Переносим библиотеки в продакшен
+				'app/css/main.css',
+				'app/css/moz.min.css',
+				'app/css/header.min.css',
+				'app/css/fonts.min.css'
+
+			])
+			.pipe(gulp.dest('dist/css'))
+
+	var buildFonts = gulp.src('app/fonts/**/*') // Переносим шрифты в продакшен
+			.pipe(gulp.dest('dist/fonts'))
+
+	var buildJs = gulp.src('app/js/**/*') // Переносим скрипты в продакшен
+			.pipe(gulp.dest('dist/js'))
+
+	var buildHtml = gulp.src('app/*.html') // Переносим HTML в продакшен
+			.pipe(gulp.dest('dist'));
+
 });
 
 gulp.task('default', ['browser-sync', 'watch']);

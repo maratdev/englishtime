@@ -1,5 +1,6 @@
 @import "bourbon";
 @import "vars.scss";
+@import "fonts";
 
 *::-webkit-input-placeholder {
 	color: #b8b8b8;
@@ -38,6 +39,7 @@ body textarea:required:valid {
 	width: 100%;
 	height: auto;
 	margin-bottom: 120px;
+	padding-top:35px;
 
 	h2{
 		padding: 0;
@@ -532,6 +534,7 @@ height: auto;
 	}
 }
 .reviews{
+	padding-top: 35px;
 	background-color: #fff;
 	padding-bottom:100px;
 	h2{

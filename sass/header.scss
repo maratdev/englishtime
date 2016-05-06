@@ -1,7 +1,5 @@
 @import "bourbon";
 @import "vars";
-@import "fonts";
-
 
 body {
 	font-size: 100%;
@@ -82,15 +80,22 @@ header{
 						&:hover{
 							text-decoration: none;
 							color: #337ab7;
-
+							outline: none;
+						}
+						&:active{
+							outline: none;
 						}
 					}
 					&.active{
 						a{
+							text-decoration: none;
 							padding:2px 13px;
 							color: #2c2c2c;
 							border: 0.063em solid #2c2c2c;
 							border-radius: 13px;
+							&:active{
+								outline: none;
+							}
 						}
 
 					}
