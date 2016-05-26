@@ -1,15 +1,17 @@
 var gulp         = require('gulp'),
-		sass         = require('gulp-sass'),
-		autoprefixer = require('gulp-autoprefixer'),
-		cleanCSS    = require('gulp-clean-css'),
+		sass         = require('gulp-sass'), //Подключаем Sass пакет,
+		autoprefixer = require('gulp-autoprefixer'), // Подключаем библиотеку для автоматического добавления префиксов
+		cleanCSS     = require('gulp-clean-css'),
 		cssnano      = require('gulp-cssnano'), // Подключаем пакет для минификации CSS
-		rename       = require('gulp-rename'),
-		browserSync  = require('browser-sync').create(),
-		concat       = require('gulp-concat'),
+		rename       = require('gulp-rename'), // Подключаем библиотеку для переименования файлов
+		browserSync  = require('browser-sync').create(), // Подключаем Browser Sync
+		concat       = require('gulp-concat'), // Подключаем gulp-concat (для конкатенации файлов)
+
 		del          = require('del'), // Подключаем библиотеку для удаления файлов и папок
-		uglify       = require('gulp-uglify'),
-		htmlmin = require('gulp-htmlmin'),
+		uglify       = require('gulp-uglify'), // Подключаем gulp-uglifyjs (для сжатия JS)
+		htmlmin 	 = require('gulp-htmlmin'), // Подключаем  (для сжатия HTML)
 		pngquant     = require('imagemin-pngquant'), // Подключаем библиотеку для работы с png
+		cache        = require('gulp-cache'), // Подключаем библиотеку кеширования
 		imagemin     = require('gulp-imagemin'); // Подключаем библиотеку для работы с изображениями
 
 gulp.task('browser-sync', ['styles', 'scripts'], function() {
@@ -43,7 +45,7 @@ gulp.task('scripts', function() {
 		'./app/libs/paralax/parallax.min.js',
 		'./app/libs/plugins-scroll/plugins-scroll.js',
 		'./app/libs/stickup/stickUp.min.js',
-		'.app/libs/magnific-popup/dist/jquery.magnific-popup.min.js',
+		'./app/libs/magnific-popup/dist/jquery.magnific-popup.min.js',
 		])
 		.pipe(concat('libs.js'))
 		 .pipe(uglify()) //Minify libs.js
@@ -60,8 +62,17 @@ gulp.task('watch', function () {
 
 
 
+
+// Gulp Uglify
+gulp.task('gulp-uglify', function(){
+	gulp.src('app/js/*.js')
+			.pipe(uglify())
+			.pipe(gulp.dest('dist/js'))
+});
+
+
 gulp.task('minify', function() {
-	return gulp.src('src/*.html')
+	return gulp.src('app/*.html')
 			.pipe(htmlmin({collapseWhitespace: true}))
 			.pipe(gulp.dest('dist'))
 });
@@ -82,12 +93,11 @@ gulp.task('img', function() {
 });
 
 
-gulp.task('build', ['clean', 'img', 'sass', 'scripts'], function() {
+gulp.task('build', ['clean', 'minify', 'img', 'styles', 'scripts'], function() {
 
 	var buildCss = gulp.src([ // Переносим библиотеки в продакшен
-				'app/css/main.css',
+				'app/css/main.min.css',
 				'app/css/moz.min.css',
-				'app/css/header.min.css',
 				'app/css/fonts.min.css'
 
 			])
@@ -99,9 +109,11 @@ gulp.task('build', ['clean', 'img', 'sass', 'scripts'], function() {
 	var buildJs = gulp.src('app/js/**/*') // Переносим скрипты в продакшен
 			.pipe(gulp.dest('dist/js'))
 
-	var buildHtml = gulp.src('app/*.html') // Переносим HTML в продакшен
-			.pipe(gulp.dest('dist'));
 
 });
 
+
+gulp.task('clear', function (callback) {
+	return cache.clearAll();
+})
 gulp.task('default', ['browser-sync', 'watch']);

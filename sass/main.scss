@@ -1,6 +1,7 @@
 @import "bourbon";
-@import "vars.scss";
+@import "vars";
 @import "fonts";
+@import "custom_popup";
 
 *::-webkit-input-placeholder {
 	color: #b8b8b8;
@@ -31,6 +32,26 @@ body input:required:valid,
 body textarea:required:valid {
 	color: #666666;
 }
+/* Прелоадер */
+#page-preloader {
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background: #fff;
+	z-index: 100500;
+}
+
+#page-preloader .spinner {
+	width: 200px;
+	height: 106px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	background: url('../img/preloader.gif') no-repeat 50% 50%;
+	margin: -16px 0 0 -16px;
+}
 
 //Custom Styles Here
 .service{
@@ -58,7 +79,7 @@ body textarea:required:valid {
 			margin: 0;
 			.item-box{
 				border: 0.063em solid #d8d7d7;
-				min-height:210px;
+				min-height:250px;
 					img{
 						float: left;
 						margin-top: 25px;
@@ -565,6 +586,7 @@ height: auto;
 	width: 100%;
 	position: relative;
 	background-color: #fff;
+	overflow: hidden;
 
 	img{
 		width: 101%;
@@ -848,7 +870,7 @@ footer{
 
 //Load Libs SCSS
 @import "app/libs/animate/animate";
-@import "app/libs/font-awesome/css/font-awesome.scss";
+@import "app/libs/font-awesome/css/font-awesome.min";
 @import "app/libs/magnific-popup/dist/magnific-popup";
 
 
