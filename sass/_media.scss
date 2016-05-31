@@ -140,6 +140,8 @@
 				font-size: em(18px);
 			}
 			.callback {
+				display: inline-block;
+				margin-top:7px;
 				font-size: em(9.5px)
 			}
 
@@ -179,7 +181,9 @@
 }
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
-
+	.phone{
+		line-height: em(35px);
+	}
 
 	h2{
 		font-size:em(36px);

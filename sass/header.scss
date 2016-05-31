@@ -36,7 +36,7 @@ header{
 	.top_line{
 		position: relative;
 		width: 100%;
-		height: 3.938em;
+		height: 4.100em;
 		background-color: #fff;
 		z-index: 999;
 
@@ -90,18 +90,23 @@ header{
 		}
 	}
 	.phone{
-		margin-top:15px ;
+		margin-top:10px ;
 		text-align: right;
-		line-height: em(12px);
+		line-height: em(15px);
 		.phone-wrap{
 			color: #1b325f;
 			font:em(23px) pf_din_text_cond_prolight;
-				i{
-					margin-right:8px;
+				i{  margin-right:8px;
 					font-size:em(16px);
 				}
-		}
-
+				a{
+					color: inherit;
+					text-decoration:none;
+					&:hover{
+						color: #337ab7;
+					}
+				}
+			}
 		.callback{
 			color: #7e91a4;
 			font-size:em(11.9px);
@@ -110,9 +115,14 @@ header{
 				&:hover{
 					text-decoration: none;
 					border-color: transparent;
+					outline: none;
 				}
+				&:focus{
+					outline: none !important;
+					text-decoration: none;
+				}
+			}
 		}
-	}
 
 	.top_wrapper{
 		animation-duration: 2s;

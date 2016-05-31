@@ -3,9 +3,9 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="929fd41e-6111-4583-8593-df58195ed738" name="EnglishTime" url="http://doom3.beget.com">
-        <fileTransfer host="doom3.beget.com" port="21" rootFolder="/englishtime.pro/public_html" password="dfc7dfcbdfd8dfcbdfdedf9ddf9ddfe5" username="violet8z_ftp">
+        <fileTransfer host="doom3.beget.com" port="21" password="dfc7dfcbdfd8dfcbdfdedf9ddf9ddfe5" username="violet8z_ftp">
           <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" />
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" />
           </advancedOptions>
         </fileTransfer>
       </webServer>

@@ -1,7 +1,9 @@
+
+@import "fonts";
 @import "bourbon";
 @import "vars";
-@import "fonts";
 @import "custom_popup";
+
 
 *::-webkit-input-placeholder {
 	color: #b8b8b8;
@@ -601,7 +603,6 @@ height: auto;
 		padding: 0;
 	}
 	.contacts-form{
-		padding-bottom:46px;
 		background:#80ceff url("../img/contacts/newsletter-parallax.png") no-repeat center;
 		background-size: cover;
 		height: auto;
@@ -867,7 +868,7 @@ footer{
 
 //ALWAYS END
 @import "media";
-
+@import "bootstrap";
 //Load Libs SCSS
 @import "app/libs/animate/animate";
 @import "app/libs/font-awesome/css/font-awesome.min";
