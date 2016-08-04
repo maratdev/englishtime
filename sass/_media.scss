@@ -3,6 +3,7 @@
 /*==========  Desktop First Method  ========== */
 @media only screen and (max-width: 1500px) {
 
+
 	footer{
 		.button-content{
 			padding-left: 0 !important;
@@ -32,6 +33,7 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width: 1200px) {
+
 	.phone{
 		padding-right: 50px;
 	}
@@ -272,5 +274,10 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width: 1200px) {
-	/* */
+	.service{
+
+		.item-box{
+			padding: 0;
+		}
+	}
 }
